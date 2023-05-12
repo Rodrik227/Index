@@ -24,7 +24,7 @@ function turnon() {
         let minute = minutes < 10 ? `0${minutes}` :minutes
         clock.innerHTML = `${hour}:${minute}`
     }
-
+// ------------------------------------------------MENU
     function menu() {
         const menu = document.getElementById('menuAll')
 
@@ -41,8 +41,9 @@ function turnon() {
     }
     
     document.addEventListener('mouseup', function(e) {
-        const menu = document.getElementById('taskbar');
-        if (!menu.contains(e.target)) {
+        const bar = document.getElementById('taskbar');
+        const menu = document.getElementById('menuAll')
+        if (!bar.contains(e.target)) {
             menu.classList.add('hidden');
             menu.classList.remove('opened')
             console.log('fechar')

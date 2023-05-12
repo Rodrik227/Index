@@ -167,10 +167,18 @@ body {
 
 /* ------------------APPS------------------- */
 .apps {
+    text-align: center;
+    width: 100%;
     display: grid;
-    grid-template-columns: auto auto auto auto auto auto auto auto auto;
-    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 .apps div {
     border: 1px solid red;
+}
+.apps div {
+    width: 100%;
+}
+.apps img {
+    width: 100%;
 }
