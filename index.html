@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Windows R</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/Icon.png" type="image/x-icon">
 </head>
 <body id="pag" class="innit">
-
+<!-- ------------------------------------------------------LOGIN -->
     <div id="on" class="on">
         <div id="contenti">
             <img src="assets/windows-xp-logo.png">
@@ -20,66 +20,61 @@
                 <source src="assets/On sound.mp3">
             </audio>
     </div>
+    <!-- ------------------------------------------------------BODY -->
     <div id="body" class="hidden">
+    <!-- ------------------------------------------------------APLICATIVOS -->
         <div class="apps">
-            <div id="bin">
+            <div id="bin" class="oneApp" onclick="select(0)" ondblclick="openW()">
                 <div class="img"><img src="assets/bin.png"></div>
                 <div class="name">Lixeira</div>
+            </div>          
+            <div id="indicacoes" class="oneApp" onclick="select(1)" ondblclick="openW()">
+                <div class="img"><img src="assets/Favicon.png"></div>
+                <div class="name">Site de Indicações</div>
+        </div>
+            <div id="PP" class="oneApp" onclick='select(2)' ondblclick="openW()">
+                <div class="img"><img src="assets/Favicon.svg"></div>
+                <div class="name">Site de PP</div>
             </div>
-            <div id="bin">
-                <div class="img"><img src="assets/bin.png"></div>
-                <div class="name">Lixeira</div>
-            </div>            <div id="bin">
-                <div class="img"><img src="assets/bin.png"></div>
-                <div class="name">Lixeira</div>
-            </div>            <div id="bin">
-                <div class="img"><img src="assets/bin.png"></div>
-                <div class="name">Lixeira</div>
-            </div>            <div id="bin">
-                <div class="img"><img src="assets/bin.png"></div>
-                <div class="name">Lixeira</div>
-            </div>            <div id="bin">
-                <div class="img"><img src="assets/bin.png"></div>
-                <div class="name">Lixeira</div>
-            </div>            <div id="bin">
-                <div class="img"><img src="assets/bin.png"></div>
-                <div class="name">Lixeira</div>
-            </div>            <div id="bin">
-                <div class="img"><img src="assets/bin.png"></div>
-                <div class="name">Lixeira</div>
-            </div>            <div id="bin">
-                <div class="img"><img src="assets/bin.png"></div>
-                <div class="name">Lixeira</div>
-            </div>
-            <div id="indicacoes">
-                <div class="img"></div>
-                <div class="name"></div>
+            <div id="Kat" class="oneApp" onclick='select(3)' ondblclick="openW()">
+                <div class="img"><img src="assets/katIcon.png"></div>
+                <div class="name">Kat Generator</div>
             </div>
         </div>
+    <!-- ------------------------------------------------------JANELAS -->
+        <div id="janela" class="hidden">
+            <div class="controls">
+            <button id="sofrimento">X</button>
+            </div>
+            <div class="insideWindows">
+                <img id="img" src="">
+                <h1 id="h1"></h1>
+                <h2 id="h2"><span id="subject"></span><br><span id="data"></span></h2>
+                <p id="p"></p>
+                <a id="link" href="">Acessar</a>
+            </div>
+        </div>
+        <!-- ------------------------------------------------------TASKBAR -->
         <div id="taskbar">
             <div id="menuAll" class="hidden">
                 <div id="menu" class="program">
                     <div class="user">
-                        <img src="assets/Placeholder Perfil.webp">
-                        <h1>User</h1>
+                        <img src="assets/Bah.jpg">
+                        <h1>Rodrik</h1>
                     </div>
                     <div class="content">
                     <div id="left">
                         <div id="github">
                             <img src="assets/github.png">
-                            <p>github</p>
+                            <a href="https://github.com/rodrik227">github</a>
                         </div>
                         <div id="instagram">
                             <img src="assets/instagram.png">
-                            <p>instagram</p>
+                            <a href="">instagram</a>
                         </div>
                         <div id="whatsapp">
                             <img src="assets/whatsapp.png">
-                            <p>whatsapp</p>
-                        </div>
-                        <div id="discord">
-                            <img src="assets/discord.png">
-                            <p>Discord</p>
+                            <a href="https://wa.me/5551999599285">whatsapp</a>
                         </div>
                     </div>
                     <div id="right">
