@@ -113,12 +113,15 @@ const appsGrid = document.querySelector('.apps')
 
 const IconApps = document.querySelectorAll('.oneApp')
 
+
+
 IconApps.forEach((IconApp) => {
-    const AppIdString = IconApp.dataset.id;
-    const AppId = parseInt(AppIdString);
-    console.log(AppId)
+    
     IconApp.addEventListener("click", () => {
-        const id = Apps[AppId]
+        const AppIdString = IconApp.dataset.id;
+        const id = parseInt(AppIdString);
+        
+        const AppId = Apps[id]
         const title = id.title;
         const subject = id.Subject;
         const Data = id.Data;
@@ -144,14 +147,16 @@ IconApps.forEach((IconApp) => {
     });
 });
 
-
-
-Apps.forEach = (App) => {
+Apps.forEach((App) => {
     const appClass = App.Class
     const newApp = document.createElement("div")
     newApp.classList.add("oneApp", appClass)
-    
-}
+    console.log('apps Created')
+    const imgDiv = document.createElement("div")
+    const nameDiv = document.createElement('div')
+})
+
+
 setInterval(() => {
     getHours()
 }, 10000)
