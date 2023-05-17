@@ -37,6 +37,117 @@ function menu() {
     }
 }
 
+
+// ------------------------------------------------SELECT APP INTERFACE
+const Apps = [
+    {
+        title: "Template",
+        Subject: "Teste",
+        Data: "00/00/00",
+        Img: "Placeholder.jpg",
+        Text: "Texto teste pra essa poha",
+        Link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        Class: "template",
+        Icon: "./assets/bin.png"
+    },
+    {
+        title: "Indicações",
+        Subject: "Técnico",
+        Data: "24/04/2023",
+        Img: "indicacoes.jpg",
+        Text: "Considerando os conhecimentos já adquiridos em HTML, CSS e JS, utilizar os mesmos e aprofundar para criar uma webpage (página na internet) sobre osconteúdos básicos de Front-End, sendo esta a temática principal para as recomendações de:</p>1 site de conteúdos (deve ter o link pro site 1 canal Youtube de conteúdos (deve ter o link e 1 vídeo embedado)1 influenciador de conteúdos (deve ter o link e um material embedado)1 tutorial (deve ter o link e uma imagem do resultado do tutorial)1 podcast (link embedado de só áudio preferencialmente, mas pode ser vídeo)",
+        Link: "/indicacoes",
+        Class: "indicacoes",
+        Icon: "./assets/indicacoesIcon.png"
+    },
+    {
+        title: "Trabalho de PP",
+        Subject: "Projeto Profissional",
+        Data: "15/05/2023",
+        Img: "PP.jpg",
+        Text: "A poluição é um assunto muito em alta hoje em dia, pelo fato do alto nível de poluição no nosso planeta. Nós queremos ajudar a resolver. Por meio da conscientização das formas de limpeza e de poluição.",
+        Link: "/PP",
+        Class: "pp",
+        Icon: "./assets/Favicon.svg"
+    },
+    {
+        title: "Kat Generator",
+        Subject: "Técnico",
+        Data: "05/05/2023",
+        Img: "kat.jpg",
+        Text: "A partir do código exemplo em https://arquivo.dev/t1/oficina.html modificar o arquivo html, com temática livre, inserindo algum novo elemento nesta webpage(exemplo, um vídeo, um link, um javascript), e anexar este novo documento html personalizado aqui nesta tarefa.",
+        Link: "/kat",
+        Class: "kat",
+        Icon: "./assets/katIcon.png"
+    },
+]
+
+const h1 = document.getElementById('h1W')
+const h2 = document.getElementById('h2')
+const p = document.getElementById('p')
+const imgH = document.getElementById('img')
+const dataH = document.getElementById('data')
+const subjectH = document.getElementById('subjectW')
+const a = document.getElementById('link')
+
+const appsGrid = document.querySelector('.apps')
+
+
+Apps.forEach((App) => {
+    function getRandomInt() {
+        return Math.floor(Math.random() * 4) + 1;
+    }
+
+    const appClass = App.Class
+    const newApp = document.createElement("div")
+    newApp.classList.add("oneApp", appClass)
+
+    console.log('apps Created')
+
+    const nameDiv = document.createElement('div')
+    const nameDivText = document.createTextNode(App.title)
+    nameDiv.appendChild(nameDivText)
+
+    const imgElement = document.createElement('img')
+    imgElement.src = App.Icon
+
+    // FAZER AREA DO MENU
+
+    newApp.appendChild(imgElement)
+    newApp.appendChild(nameDiv)
+
+    newApp.style.gridRow = getRandomInt()
+
+    document.getElementById('appsDiv').appendChild(newApp)
+
+    const IconApps = document.querySelectorAll('.oneApp')
+
+        newApp.addEventListener("click", () => {
+                const title = App.title;
+                const subject = App.Subject;
+                const Data = App.Data;
+                const Img = App.Img;
+                const text = App.Text;
+                const link = App.Link;
+
+                h1.innerHTML = title;
+                dataH.innerHTML = Data;
+                subjectH.innerHTML = subject;
+                imgH.src = `/assets/${Img}`
+                p.innerHTML = text;
+                a.href = link;
+                a.target = "_blank";
+        });
+
+    IconApps.forEach((IconApp) => {
+        IconApp.addEventListener("dblclick", () => {
+            janela.classList.remove('hidden')
+            janela.classList.add('window')
+        });
+    });
+})
+
+
 const selectedApps = document.querySelectorAll('.oneApp')
 
 document.addEventListener('mouseup', function (e) {
@@ -61,100 +172,9 @@ selectedApps.forEach((selectedApp) => {
         selectedApp.classList.add('click')
     })
 })
-// ------------------------------------------------SELECT APP INTERFACE
-const Apps = [
-    {
-        title: "Template",
-        Subject: "Teste",
-        Data: "00/00/00",
-        Img: "Placeholder.jpg",
-        Text: "Texto teste pra essa poha",
-        Link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-        Class: "template"
-    },
-    {
-        title: "Indicações",
-        Subject: "Técnico",
-        Data: "24/04/2023",
-        Img: "indicacoes.jpg",
-        Text: "Considerando os conhecimentos já adquiridos em HTML, CSS e JS, utilizar os mesmos e aprofundar para criar uma webpage (página na internet) sobre osconteúdos básicos de Front-End, sendo esta a temática principal para as recomendações de:</p>1 site de conteúdos (deve ter o link pro site 1 canal Youtube de conteúdos (deve ter o link e 1 vídeo embedado)1 influenciador de conteúdos (deve ter o link e um material embedado)1 tutorial (deve ter o link e uma imagem do resultado do tutorial)1 podcast (link embedado de só áudio preferencialmente, mas pode ser vídeo)",
-        Link: "/indicacoes",
-        Class: "indicacoes"
-        
-    },
-    {
-        title: "Trabalho de PP",
-        Subject: "Projeto Profissional",
-        Data: "15/05/2023",
-        Img: "PP.jpg",
-        Text: "A poluição é um assunto muito em alta hoje em dia, pelo fato do alto nível de poluição no nosso planeta. Nós queremos ajudar a resolver. Por meio da conscientização das formas de limpeza e de poluição.",
-        Link: "/PP",
-        Class: "pp"
-    },
-    {
-        title: "Kat Generator",
-        Subject: "Técnico",
-        Data: "05/05/2023",
-        Img: "kat.jpg",
-        Text: "A partir do código exemplo em https://arquivo.dev/t1/oficina.html modificar o arquivo html, com temática livre, inserindo algum novo elemento nesta webpage(exemplo, um vídeo, um link, um javascript), e anexar este novo documento html personalizado aqui nesta tarefa.",
-        Link: "/kat",
-        Class: "kat"
-    },
-]
-
-const h1 = document.getElementById('h1W')
-const h2 = document.getElementById('h2')
-const p = document.getElementById('p')
-const imgH = document.getElementById('img')
-const dataH = document.getElementById('data')
-const subjectH = document.getElementById('subjectW')
-const a = document.getElementById('link')
-const appsGrid = document.querySelector('.apps')
-
-const IconApps = document.querySelectorAll('.oneApp')
-
-
-
-IconApps.forEach((IconApp) => {
-    
-    IconApp.addEventListener("click", () => {
-        const AppIdString = IconApp.dataset.id;
-        const id = parseInt(AppIdString);
-        
-        const AppId = Apps[id]
-        const title = id.title;
-        const subject = id.Subject;
-        const Data = id.Data;
-        const Img = id.Img;
-        const text = id.Text;
-        const link = id.Link;
-
-        h1.innerHTML = title;
-        dataH.innerHTML = Data;
-        subjectH.innerHTML = subject;
-        imgH.src = `./assets/${Img}`
-        p.innerHTML = text;
-        a.href = link;
-        a.target = "_blank";
-    });
-});
 
 const janela = document.getElementById('janela')
-IconApps.forEach((IconApp) => {
-    IconApp.addEventListener("dblclick", () => {
-        janela.classList.remove('hidden')
-        janela.classList.add('window')
-    });
-});
 
-Apps.forEach((App) => {
-    const appClass = App.Class
-    const newApp = document.createElement("div")
-    newApp.classList.add("oneApp", appClass)
-    console.log('apps Created')
-    const imgDiv = document.createElement("div")
-    const nameDiv = document.createElement('div')
-})
 
 
 setInterval(() => {
