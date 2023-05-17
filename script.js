@@ -111,14 +111,44 @@ Apps.forEach((App) => {
     const imgElement = document.createElement('img')
     imgElement.src = App.Icon
 
-    // FAZER AREA DO MENU
-
     newApp.appendChild(imgElement)
     newApp.appendChild(nameDiv)
 
     newApp.style.gridRow = getRandomInt()
-
     document.getElementById('appsDiv').appendChild(newApp)
+
+    const menuDiv = document.createElement('div')
+    const menuSimg = document.createElement('div')
+    const menuStext = document.createElement('div')
+    const menuSubDiv = document.createElement('p')
+    const menuTitleDiv = document.createElement('h3')
+    const menuImg = document.createElement('img')
+    const menuSub = document.createTextNode(App.Subject)
+    const menuTitle = document.createTextNode(App.title)
+
+    menuDiv.classList.add('site')
+    menuSimg.classList.add('menuSimg')
+    menuStext.classList.add('menuStext')
+    menuImg.src = App.Icon
+    menuTitleDiv.appendChild(menuTitle)
+    menuSubDiv.appendChild(menuSub)
+    menuStext.appendChild(menuTitleDiv)
+    menuStext.appendChild(menuSubDiv)
+    menuSimg.appendChild(menuImg)
+    menuDiv.appendChild(menuSimg)
+    menuDiv.appendChild(menuStext)
+
+    document.getElementById('right').appendChild(menuDiv)
+
+    const url = App.Link
+
+    function openLink() {
+        const win = window.open(url, '_blank')
+        win.focus()
+    }
+    menuDiv.addEventListener("click", () => {
+        openLink()
+    })
 
     const IconApps = document.querySelectorAll('.oneApp')
 
@@ -133,7 +163,7 @@ Apps.forEach((App) => {
                 h1.innerHTML = title;
                 dataH.innerHTML = Data;
                 subjectH.innerHTML = subject;
-                imgH.src = `/assets/${Img}`
+                imgH.src = `./assets/${Img}`
                 p.innerHTML = text;
                 a.href = link;
                 a.target = "_blank";
