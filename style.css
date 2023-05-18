@@ -138,6 +138,9 @@ body {
     font-size: 15px;
     font-weight: 100;
 }
+#left div:hover {
+    background-color: rgb(184, 184, 184);
+}
 .content {
     display: flex;
 }
@@ -150,6 +153,10 @@ body {
 .site {
     display: flex;
     font-family: 'pixel';
+    cursor: pointer;
+}
+.site:hover {
+    background-color: #93a0af;
 }
 .user {
     display: flex;
@@ -262,4 +269,10 @@ body {
 }
 .insideWindows a:hover {
     background: rgb(0,110,225);
+}
+@media(max-width: 480px) {
+    .window {
+        max-width: 95vw;
+        left:0
+    }
 }
