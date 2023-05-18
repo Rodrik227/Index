@@ -41,10 +41,10 @@ function menu() {
 // ------------------------------------------------SELECT APP INTERFACE
 const Apps = [
     {
-        title: "Template",
+        title: "Lixeira",
         Subject: "Teste",
         Data: "00/00/00",
-        Img: "Placeholder.jpg",
+        Img: "wallpaper.jpg",
         Text: "Texto teste pra essa poha",
         Link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
         Class: "template",
@@ -169,11 +169,29 @@ Apps.forEach((App) => {
                 a.target = "_blank";
         });
 
+    function isMobile() {
+        var userAgent = navigator.userAgent.toLowerCase();
+        if (userAgent.search(/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i) != -1) {
+            return true;
+        }
+        return false;
+        }
+    
     IconApps.forEach((IconApp) => {
-        IconApp.addEventListener("dblclick", () => {
-            janela.classList.remove('hidden')
-            janela.classList.add('window')
-        });
+        IconApp.addEventListener("click", () => {
+            if (isMobile == true) {
+                janela.classList.remove('hidden')
+                janela.classList.add('window')
+                console.log('OpenMobile')
+            }
+            else {
+                IconApp.addEventListener("dblclick", () => {
+                    janela.classList.remove('hidden')
+                    janela.classList.add('window')
+                });
+            }
+        })
+
     });
 })
 
@@ -217,5 +235,22 @@ function close() {
     janela.classList.add('hidden')
 }
 document.getElementById('sofrimento').addEventListener('click', close)
+
+function nicolau() {
+    const audio = document.getElementById('nicolau')
+
+    audio.play()
+    setTimeout(nicolauImg(), 3000)
+}
+function nicolauImg() {
+    const nicolau = document.getElementById('nicolauDiv')
+
+    nicolau.classList.remove('hidden')
+    nicolau.classList.add('windowMeme')
+    setTimeout(() => {
+        nicolau.classList.remove('windowMeme')
+        nicolau.classList.add('hidden')
+    }, 5000)
+}
 
 inicio()

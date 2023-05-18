@@ -149,6 +149,9 @@ body {
     padding: 10px;
     box-shadow: inset 0px 1px 1px 1px rgb(0, 0, 0, 0.5);
     border-left: 3px solid #A8BAD0;
+    overflow: scroll ;
+    max-height: 30vh;
+    overflow-x: hidden;
 }
 .site {
     display: flex;
@@ -202,7 +205,6 @@ body {
 
 /* ------------------JANELA------------------- */
 .window {
-
     position: fixed;
     margin: 5px;
     border-radius: 5px;
@@ -216,6 +218,22 @@ body {
     padding: 5px;
     background: rgb(41,145,255);
     background: linear-gradient(0deg, rgba(41,145,255,1) 28%, rgba(0,86,176,1) 78%, rgba(106,179,255,1) 100%);
+}
+.windowMeme {
+    position: fixed;
+    margin: 5px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px black;
+    top: 10%;
+    left: 35%;
+    max-width: 50%;
+    z-index: 10;
+    padding: 5px;
+    background: rgb(41,145,255);
+    background: linear-gradient(0deg, rgba(41,145,255,1) 28%, rgba(0,86,176,1) 78%, rgba(106,179,255,1) 100%);
+}
+.windowMeme img{
+    width: 30vw;
 }
 .window img {
     width: 20vw;
@@ -272,6 +290,16 @@ body {
 }
 @media(max-width: 480px) {
     .window {
+        max-width: 95vw;
+        left:0
+    }
+    #contenti {
+        margin-top: 75%;
+    }
+    #contenti img {
+        width: 50vw;
+    }
+    .windowMeme {
         max-width: 95vw;
         left:0
     }
